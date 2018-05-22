@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-navbar color="primary">
+      <button menuToggle ion-button icon-only>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title  >LpuHubSpace</ion-title>
+    
+    <ion-buttons end>
+      <button  ion-button (click)="toViewFilter()">
+        <ion-icon name="md-color-filter"></ion-icon>Filter
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+ 
+</ion-header>
+
+
+<ion-content>
+  <ion-card *ngFor="let shop of shops | async ; let shopIndex= index;">
+  
+
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="{{shop.shopImage}}">
+        </ion-avatar>
+        <h2>{{shop.shopName}}</h2>
+        <p>{{shop.shopLocation}}</p>
+      </ion-item>
+    
+      <img src="{{shop.shopImage}}">
+    
+      <ion-card-content>
+        <p>{{shop.shopSignatureDishes}}</p>
+      </ion-card-content>
+    
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-left clear small icon-start (click)="addLike(shop,shopIndex)">
+            <div *ngIf="!likeCheck(shop); else dislike">
+                <ion-icon name="thumbs-up"></ion-icon>
+                <div>{{shop.shopLikesCount}} Likes</div>
+
+            </div>
+
+            <ng-template #dislike>
+                <ion-icon name="thumbs-down"></ion-icon>
+                <div>{{shop.shopLikesCount}} Likes</div>
+            </ng-template>
+            
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small (click)="commentClicked(shop,shopIndex)">
+            <ion-icon name="text"></ion-icon>
+            <div>{{shop.shopCommentsCount}} Comments</div>
+            
+          </button>
+          
+        </ion-col>
+        <ion-col center text-center>
+          <button ion-button small (click)="viewLikePage(shop)" color="primary">
+            View Likes
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+            <button ion-button small (click)="viewCommentPage(shop)" color="primary">
+              View Comments
+            </button>
+          </ion-col>
+         
+        
+        
+      </ion-row>
+      <ion-row>
+          <ion-col center text-center>
+              <button ion-button small (click)="viewPage(shop)">
+                View More
+              </button>
+            </ion-col>
+      </ion-row>
+      
+    
+    </ion-card>
+
+   
+    
+      
+  
+</ion-content>
+<style>
+	.social-cards ion-col {
+	  padding: 0;
+	}
+  </style>

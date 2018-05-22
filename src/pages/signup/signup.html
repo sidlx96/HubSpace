@@ -1,0 +1,96 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Sign up</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+
+	<form (ngSubmit)="signUp()" [formGroup]="form">
+		<ion-list inset>
+
+			<ion-item [ngClass]="{ invalid: emailErrors.hasError('*', ['touched']) }">
+				<ion-input type="text" placeholder="Email" formControlName="email"></ion-input>
+			</ion-item>
+
+			<div ngxErrors="email" #emailErrors="ngxErrors">
+				<div [ngxError]="['email', 'required']" [when]="['touched']">It should be a valid email</div>
+			</div>
+
+
+
+			<ion-item [ngClass]="{ invalid: passwordErrors.hasError('*', ['touched']) }">
+				<ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+			</ion-item>
+
+			<div ngxErrors="password" #passwordErrors="ngxErrors">
+				<div [ngxError]="['minlength', 'required']" [when]="['touched']">It should be at least 6 characters</div>
+			</div>
+
+
+
+			<ion-item [ngClass]="{ invalid: firstNameErrors.hasError('*', ['touched']) }">
+				<ion-input type="text" placeholder="First Name" formControlName="firstName" ></ion-input>
+			</ion-item>
+			<div ngxErrors="firstName" #firstNameErrors="ngxErrors">
+					<div [ngxError]="['required']" [when]="['touched']">It should not be empty</div>
+			</div>
+	
+
+
+
+
+
+			<ion-item [ngClass]="{ invalid: lastNameErrors.hasError('*', ['touched']) }">
+				<ion-input type="text" placeholder="Last Name" formControlName="lastName"></ion-input>
+			</ion-item>
+			<div ngxErrors="lastName" #lastNameErrors="ngxErrors">
+					<div [ngxError]="['required']" [when]="['touched']">It should not be empty</div>
+			</div>
+
+
+
+			<ion-item [ngClass]="{ invalid: usernameErrors.hasError('*', ['touched']) }">
+				<ion-input type="text" placeholder="Username should be ur email excluding after @domain" formControlName="username"></ion-input>
+			</ion-item>
+			<div ngxErrors="username" #usernameErrors="ngxErrors">
+					<div [ngxError]="['required']" [when]="['touched']">It should not be empty</div>
+			</div>
+
+
+
+
+			<ion-item [ngClass]="{ invalid: phoneNumberErrors.hasError('*', ['touched']) }">
+				<ion-input type="number" placeholder="Phone Number" formControlName="phoneNumber" ></ion-input>
+			</ion-item>
+			<div ngxErrors="phoneNumber" #phoneNumberErrors="ngxErrors">
+			  <div [ngxError]="['required']" [when]="['touched']">It should not be empty</div>
+			</div>
+
+
+			<ion-item [ngClass]="{ invalid: genderErrors.hasError('*', ['touched']) }">
+					<ion-input type="text" placeholder="gender" formControlName="gender" ></ion-input>
+				</ion-item>
+				<div ngxErrors="gender" #genderErrors="ngxErrors">
+				  <div [ngxError]="['required']" [when]="['touched']">It should not be empty</div>
+				</div>
+
+
+			
+			
+
+			
+
+
+			
+
+
+		</ion-list>
+
+		<div padding-horizontal>
+			<div class="form-error">{{signupError}}</div>
+
+			<button ion-button full type="submit" [disabled]="!form.valid">Sign up</button>
+		</div>
+	</form>
+</ion-content>

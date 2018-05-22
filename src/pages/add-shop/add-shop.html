@@ -1,0 +1,70 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Add Shop</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Shop Name</ion-label>
+      <ion-input type="text" [(ngModel)]="shop.shopName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Shop Location</ion-label>
+      <ion-input type="text" [(ngModel)]="shop.shopLocation"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Shop Working Hours (ex-9am-5pm)</ion-label>
+      <ion-input type="text" [(ngModel)]="shop.shopWorkingHours"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Shop Working Days (ex-Mon-Fri)</ion-label>
+      <ion-input type="text" [(ngModel)]="shop.shopWorkingDays"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Shop Dishes (Rajma,Juice..etc)</ion-label>
+      <ion-input type="text" [(ngModel)]="shop.shopSignatureDishes"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Shop Domain </ion-label>
+      <ion-input type="text" [(ngModel)]="shop.shopDomain"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Shop Contact Number</ion-label>
+      <ion-input type="text" [(ngModel)]="shop.shopContact"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label floating>Shop Payments Option</ion-label>
+      <ion-input type="text" [(ngModel)]="shop.shopPaymentMode"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label floating>Shop Delivery Options</ion-label>
+      <ion-input type="text" [(ngModel)]="shop.shopDeliveryOption"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-row class="center">
+        <button ion-button (click)="getPicture(0)">Open Gallery</button>  
+    </ion-row>
+    <ion-card>
+      <img [src]="captureDataUrl" *ngIf="captureDataUrl"/>
+    </ion-card>
+    </ion-item>
+
+ </ion-list>
+ <button ion-button full (click)="submit()">Submit</button>
+
+</ion-content>

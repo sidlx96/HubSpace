@@ -1,0 +1,71 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Filter</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Shop Location</ion-label>
+      <ion-select [(ngModel)]="shopLocation" (ionChange)="pickLocation(shopLocation)">
+        <ion-option value="Apartment Food Court, Block 41">Apartment Food Court, Block 41 </ion-option>
+        <ion-option value="BH2/BH3/BH4 Food Court">BH2/BH3/BH4 Food Court</ion-option>
+        <ion-option value="Behind 34 block">Behind 34 block </ion-option>
+        <ion-option value="BH-4">BH-4</ion-option>
+     </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Shop Domain</ion-label>
+      <ion-select [(ngModel)]="shopDomain" (ionChange)="pickDomain(shopDomain)">
+        <ion-option value="Food and Eatery">Food and Eatery</ion-option>        
+        <ion-option value="Shakes and Juices">Shakes and Juices</ion-option>
+     </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Delivery Options</ion-label>
+      <ion-select [(ngModel)]="shopDelivery" (ionChange)="pickDelivery(shopDelivery)">
+        <ion-option value="Yes">Yes</ion-option>        
+        <ion-option value="No">No</ion-option>
+     </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Shop Timings</ion-label>
+      <ion-select [(ngModel)]="shopTimings" (ionChange)="pickTimings(shopTimings)">
+        <ion-option value="7:00 AM to 10:00 PM">7:00 AM-10:00 PM</ion-option>     
+        <ion-option value="7:00 AM to 10:30 PM">7:00 AM-10:30 PM</ion-option>
+        <ion-option value="7:00 AM to 11:00 PM">7:00 AM-11:00 PM</ion-option> 
+        <ion-option value="7:30 AM to 10:00 PM">7:30 AM-10:00 PM</ion-option>     
+        <ion-option value="7:30 AM to 10:30 PM">7:30 AM-10:30 PM</ion-option>
+        <ion-option value="7:30 AM to 11:00 PM">7:30 AM-11:00 PM</ion-option> 
+        <ion-option value="8:00 AM to 10:00 PM">8:00 AM-10:00 PM</ion-option>     
+        <ion-option value="8:00 AM to 10:30 PM">8:00 AM-10:30 PM</ion-option>
+        <ion-option value="8:00 AM to 11:00 PM">8:00 AM-11:00 PM</ion-option> 
+        <ion-option value="8:30 AM to 10:00 PM">8:30 AM-10:00 PM</ion-option>     
+        <ion-option value="8:30 AM to 10:30 PM">8:30 AM-10:30 PM</ion-option>
+        <ion-option value="8:30 AM to 11:00 PM">8:30 AM-11:00 PM</ion-option> 
+        <ion-option value="9:00 AM to 10:00 PM">9:00 AM-10:00 PM</ion-option>     
+        <ion-option value="9:00 AM to 10:30 PM">9:00 AM-10:30 PM</ion-option>
+        <ion-option value="9:00 AM to 11:00 PM">9:00 AM-11:00 PM</ion-option> 
+        <ion-option value="9:30 AM to 10:00 PM">9:30 AM-10:00 PM</ion-option>     
+        <ion-option value="9:30 AM to 10:30 PM">9:30 AM-10:30 PM</ion-option>
+        <ion-option value="9:30 AM to 11:00 PM">9:30 AM-11:00 PM</ion-option> 
+        <ion-option value="10:00 AM to 10:00 PM">10:00 AM-10:00 PM</ion-option>     
+        <ion-option value="10:00 AM to 10:30 PM">10:00 AM-10:30 PM</ion-option>
+        <ion-option value="10:00 AM to 11:00 PM">10:00 AM-11:00 PM</ion-option> 
+
+          
+     </ion-select>
+    </ion-item>
+    
+
+
+  </ion-list>
+  <button ion-button full type="submit" (click)="applyFilter()">Apply</button>
+
+</ion-content>
