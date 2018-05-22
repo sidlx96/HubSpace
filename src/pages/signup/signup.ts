@@ -46,6 +46,8 @@ export class SignupPage {
 				this.database.list('/usersData').push(data);
 				this.navCtrl.setRoot(HomePage),
 			error => this.signupError = error.message
-			});
+			}).catch((err)=>{
+				alert(err);
+			})
   }
 }
